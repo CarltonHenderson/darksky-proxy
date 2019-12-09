@@ -35,9 +35,15 @@ exports.handler = (event, context, callback) => {
   const options = {
     qs,
     json: true
-  };
+  };      
+  
+  heads = getResponseHeaders(event);
+  console.log(`heads: ${heads}`);
+  console.log(`url: ${API_URL}/${lat},${lon}`);
+
   request(url, options)
     .then(response => {
+
       callback(null, {
         body: JSON.stringify(response),
         statusCode: 200,
@@ -45,6 +51,6 @@ exports.handler = (event, context, callback) => {
       });
     })
     .catch(error => {
-      callback('fooey: '+error);
+      callback(error);
     });
 };
