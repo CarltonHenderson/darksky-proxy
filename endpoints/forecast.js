@@ -1,7 +1,6 @@
 const request = require("request-promise");
 
-const { API_KEY } = process.env;
-const API_URL = `https://api.darksky.net/forecast/${API_KEY}`;
+const API_URL = `https://api.darksky.net/forecast/5c865bb2c117431125f6b159bf68e49b`;
 
 let { CORS_WHITELIST } = process.env;
 if (CORS_WHITELIST) {
