@@ -1,6 +1,5 @@
 [build]
   command = "netlify-lambda build endpoints/"
   functions = "functions"
-[context.master.environment]
-  API_KEY="5c865bb2c117431125f6b159bf68e49b"
-  CORS_WHITELIST="carltonhenderson.github.io"
+[context.production]
+  environment = { API_KEY = "5c865bb2c117431125f6b159bf68e49b", CORS_WHITELIST = "https://carltonhenderson.github.io" }
