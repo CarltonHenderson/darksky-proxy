@@ -16,7 +16,7 @@ const getResponseHeaders = request => {
   console.log(`origin: ${origin}`);
   console.log(`CORS_WHITELIST: ${CORS_WHITELIST}`);
   if (origin && (!CORS_WHITELIST || CORS_WHITELIST.includes(origin))) {
-    headers["Access-Control-Allow-Origin"] = "https://carltonhenderson.github.io";
+    headers["Access-Control-Allow-Origin"] = origin;
   }
   return headers;
 };
